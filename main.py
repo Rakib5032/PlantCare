@@ -4,7 +4,9 @@ import base64
 import numpy as np
 import tensorflow as tf
 import cv2
+import os
 from PIL import Image
+from xai.lime_explainer import generate_lime
 
 from fastapi import FastAPI, UploadFile, File, Request
 from fastapi.responses import JSONResponse, HTMLResponse
@@ -31,6 +33,9 @@ ADVICE_PATH = "data/advice.json"
 
 IMG_SIZE = (224, 224)
 CONFIDENCE_THRESHOLD = 0.60
+
+ENABLE_LIME = os.getenv("ENABLE_LIME", "false") == "true"
+
 
 # =====================================================
 # LOAD MODEL & DATA
@@ -120,6 +125,35 @@ async def gradcam(file: UploadFile = File(...)):
         "status": "success",
         "gradcam": encoded_img
     }
+
+@app.post("/api/lime")
+async def lime_explain(file: UploadFile = File(...)):
+    if not ENABLE_LIME:
+        return {
+            "status": "disabled",
+            "message": "LIME is disabled on cloud deployment due to memory limits."
+        }
+
+    image = Image.open(io.BytesIO(await file.read())).convert("RGB")
+    image = image.resize(IMG_SIZE)
+
+    img_np = np.array(image, dtype="uint8")
+    img_tensor = preprocess_input(img_np)
+    img_tensor = np.expand_dims(img_tensor, axis=0)
+
+    preds = model.predict(img_tensor, verbose=0)[0]
+    class_idx = int(np.argmax(preds))
+
+    lime_img = generate_lime(model, img_np, class_idx)
+
+    _, buffer = cv2.imencode(".png", lime_img)
+    encoded = base64.b64encode(buffer).decode("utf-8")
+
+    return {
+        "status": "success",
+        "lime": encoded
+    }
+
 
 # =====================================================
 # HEALTH CHECK (Render)

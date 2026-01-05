@@ -66,6 +66,34 @@ async function analyze() {
         }
 
         // SUCCESS
+
+async function showLIME(){
+    let fd = new FormData();
+    fd.append("file", selectedFile);
+
+    let res = await fetch("/api/lime", { method: "POST", body: fd });
+    let data = await res.json();
+
+    let box = document.getElementById("xaiOutput");
+
+    if (data.status === "disabled") {
+        box.innerHTML = `
+            <div class="result-content low-confidence">
+                <h3>⚠️ LIME Unavailable</h3>
+                <p>${data.message}</p>
+            </div>
+        `;
+        return;
+    }
+
+    let img = document.createElement("img");
+    img.src = "data:image/png;base64," + data.lime;
+    img.alt = "LIME Explanation";
+
+    box.innerHTML = "";
+    box.appendChild(img);
+}
+
         document.getElementById("xaiBtn").classList.remove("hidden");
 
         resultDiv.innerHTML = `

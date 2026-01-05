@@ -1,36 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>PlantCare AI</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantCare AI - Disease Detection</title>
+
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        /* ===== COLORS ===== */
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #34d399;
+            --bg-light: #f0fdf4;
+            --bg-card: #ffffff;
+            --text-primary: #064e3b;
+            --text-secondary: #047857;
+            --shadow: 0 10px 25px rgba(16, 185, 129, .1);
+            --shadow-lg: 0 20px 40px rgba(16, 185, 129, .15)
+        }
+
+        /* ===== BASE ===== */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0fdf4, #d1fae5);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow)
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: bold
+        }
+
+        .logo-icon {
+            font-size: 2rem
+        }
+
+        .tagline {
+            font-size: .85rem;
+            opacity: .9
+        }
+
+        /* ===== MAIN ===== */
+        main {
+            flex: 1;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0 20px
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2rem
+        }
+
+        .intro-section {
+            text-align: center
+        }
+
+        .intro-section h1 {
+            color: var(--text-primary);
+            margin-bottom: .5rem
+        }
+
+        .intro-section p {
+            color: var(--text-secondary)
+        }
+
+        .upload-section {
+            text-align: center
+        }
+
+        .upload-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem
+        }
+
+        /* ===== PREVIEW ===== */
+        .preview {
+            margin: 1.5rem 0;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-light);
+            border-radius: 15px;
+            border: 2px dashed var(--secondary)
+        }
+
+        .preview img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 10px
+        }
+
+        /* ===== INPUT ===== */
+        input[type=file] {
+            margin: 1rem auto;
+            padding: 10px;
+            border: 2px solid var(--secondary);
+            border-radius: 10px;
+            cursor: pointer
+        }
+
+        input[type=file]::file-selector-button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 10px
+        }
+
+        /* ===== BUTTONS ===== */
+        .buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .3s;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, .3)
+        }
+
+        .btn:hover {
+            transform: translateY(-2px)
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #ef4444, #dc2626)
+        }
+
+        .btn-xai {
+            background: linear-gradient(135deg, #6366f1, #4f46e5)
+        }
+
+        .hidden {
+            display: none !important
+        }
+
+        /* ===== RESULT ===== */
+        #result {
+            margin-top: 1.5rem
+        }
+
+        .result-content {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
+            text-align: left
+        }
+
+        .low-confidence {
+            background: #fef3c7;
+            border-left-color: #f59e0b
+        }
+
+        /* ===== CONFIDENCE ===== */
+        .confidence-display {
+            background: white;
+            padding: .8rem;
+            border-radius: 10px;
+            margin: 1rem 0
+        }
+
+        .confidence-bar {
+            background: #e5e7eb;
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden
+        }
+
+        .confidence-fill {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            height: 100%
+        }
+
+        /* ===== XAI ===== */
+        #xaiOutput img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: var(--shadow)
+        }
+
+        /* ===== LOADING ===== */
+        .loading {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 3px solid rgba(255, 255, 255, .3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin .8s linear infinite;
+            margin-left: 8px
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            font-size: .9rem
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="app">
-    <h1>🌿 PlantCare AI</h1>
-    <p class="subtitle">AI-powered Plant Disease Detection</p>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">🌱</span>
+                <div>
+                    <div>PlantCare AI</div>
+                    <div class="tagline">Smart Plant Disease Detection</div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <div class="card">
-        <input type="file" id="imageInput" accept="image/*" capture="environment">
-        <div class="preview">
-            <img id="previewImg" src="static\images\image.jpg">
+    <main>
+
+        <div class="card intro-section">
+            <h1>🔬 Detect Plant Diseases Instantly</h1>
+            <p>Upload a leaf image and get AI-powered diagnosis with treatment advice.</p>
         </div>
 
-        <div class="buttons">
-            <button onclick="analyze()">Analyze</button>
-            <button class="clear" onclick="clearAll()">Clear</button>
+        <div class="card upload-section">
+
+            <div class="upload-icon">📸</div>
+
+            <input type="file" id="imageInput" accept="image/*" capture="environment">
+
+            <div class="preview">
+                <img id="previewImg" src="/static/images/gif.gif">
+            </div>
+
+            <div class="buttons">
+                <button class="btn" onclick="analyze(event)">🔍 Analyze</button>
+                <button class="btn btn-secondary" onclick="clearAll()">🔄 Clear</button>
+            </div>
+
+            <div id="result"></div>
+
+            <button id="xaiBtn" class="btn btn-xai hidden" onclick="showXAI()">💡 Show Explanation</button>
+            <div id="xaiOutput"></div>
+
         </div>
-    </div>
+    </main>
 
-    <div id="result" class="result"></div>
+    <footer>
+        © 2026 PlantCare AI | EfficientNetV2-B3 & Grad-CAM
+    </footer>
 
-    <button id="xaiBtn" onclick="showXAI()" class="xai hidden">
-        🔍 Show XAI (Grad-CAM)
-    </button>
+    <script>
+        let selectedFile = null;
 
-    <div id="xaiOutput"></div>
+        document.getElementById("imageInput").addEventListener("change", e => {
+            selectedFile = e.target.files[0];
+            if (selectedFile) {
+                document.getElementById("previewImg").src = URL.createObjectURL(selectedFile)
+            }
+        });
+
+        function clearAll() { location.reload() }
+
+        async function analyze(event) {
+            if (!selectedFile) { alert("Select an image"); return }
+            const btn = event.target;
+            const old = btn.innerHTML;
+            btn.innerHTML = 'Analyzing<span class="loading"></span>';
+            btn.disabled = true;
+
+            document.getElementById("xaiBtn").classList.add("hidden");
+            document.getElementById("xaiOutput").innerHTML = "";
+
+            let fd = new FormData();
+            fd.append("file", selectedFile);
+
+            try {
+                let r = await fetch("/api/predict", { method: "POST", body: fd });
+                let d = await r.json();
+                let out = document.getElementById("result");
+
+                if (d.status === "low_confidence") {
+                    out.innerHTML = `<div class="result-content low-confidence">
+<h3>⚠️ Low Confidence</h3>
+<p>Confidence ${d.confidence}% – try a clearer image.</p></div>`;
+                    return;
+                }
+
+                document.getElementById("xaiBtn").classList.remove("hidden");
+
+                out.innerHTML = `<div class="result-content">
+<h3>🌿 ${d.prediction}</h3>
+<div class="confidence-display">
+<b>${d.confidence}%</b>
+<div class="confidence-bar">
+<div class="confidence-fill" style="width:${d.confidence}%"></div>
 </div>
+</div>
+<p>${d.advice?.suggestion || ""}</p>
+</div>`;
+            }
+            catch (e) { alert("Prediction failed") }
+            finally { btn.innerHTML = old; btn.disabled = false }
+        }
 
-<script src="/static/js/app.js"></script>
+        async function showXAI() {
+            let btn = document.getElementById("xaiBtn");
+            btn.innerHTML = 'Generating<span class="loading"></span>';
+            btn.disabled = true;
+
+            let fd = new FormData();
+            fd.append("file", selectedFile);
+
+            try {
+                let r = await fetch("/api/gradcam", { method: "POST", body: fd });
+                let d = await r.json();
+
+                if (d.status === "disabled") {
+                    document.getElementById("xaiOutput").innerHTML =
+                        `<div class="result-content low-confidence">${d.message}</div>`;
+                    return;
+                }
+
+                let img = document.createElement("img");
+                img.src = "data:image/png;base64," + d.gradcam;
+                document.getElementById("xaiOutput").innerHTML = "";
+                document.getElementById("xaiOutput").appendChild(img);
+            }
+            catch (e) { alert("XAI failed") }
+            finally { btn.innerHTML = "💡 Show Explanation"; btn.disabled = false }
+        }
+    </script>
+
 </body>
+
 </html>

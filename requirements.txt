@@ -7,3 +7,5 @@ pillow
 python-multipart
 jinja2
 matplotlib
+lime
+scikit-image
