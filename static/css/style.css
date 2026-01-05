@@ -1,0 +1,64 @@
+body {
+    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.app {
+    max-width: 420px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.preview img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.clear {
+    background: #ffcdd2;
+}
+
+.xai {
+    margin-top: 15px;
+    background: #c8e6c9;
+}
+
+.hidden {
+    display: none;
+}
+
+.result {
+    margin-top: 20px;
+    text-align: left;
+}

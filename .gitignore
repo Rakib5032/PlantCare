@@ -1,0 +1,67 @@
+# ===============================
+# Python
+# ===============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# ===============================
+# Virtual Environment
+# ===============================
+venv/
+.env/
+.venv/
+
+# ===============================
+# OS / Editor
+# ===============================
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# ===============================
+# Jupyter / Logs
+# ===============================
+.ipynb_checkpoints/
+*.log
+
+# ===============================
+# TensorFlow / Keras
+# ===============================
+*.h5
+*.ckpt
+*.ckpt.index
+*.ckpt.data-*
+*.pb
+*.pbtxt
+events.out.tfevents*
+
+# ⚠️ Keep your .keras model if needed
+# Comment the next line if you want to commit the model
+# *.keras
+
+# ===============================
+# Static generated files
+# ===============================
+static/images/*.png
+static/images/*.jpg
+
+# ===============================
+# Uploads / Temp files
+# ===============================
+uploads/
+tmp/
+*.tmp
+
+# ===============================
+# FastAPI / Uvicorn
+# ===============================
+__uvicorn__

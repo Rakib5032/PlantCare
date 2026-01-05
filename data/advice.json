@@ -1,0 +1,147 @@
+{
+    "Eggplant_Blight": {
+        "suggestion": "Early blight detected. Remove infected leaves immediately. Apply copper-based fungicides. Ensure proper spacing between plants for air circulation.",
+        "treatment": "Apply fungicide every 7-10 days. Remove severely infected leaves and destroy them. Water at base of plants to avoid wetting foliage.",
+        "prevention": "Practice crop rotation. Avoid overhead watering. Maintain proper plant spacing. Apply mulch to prevent soil splash."
+    },
+    "Eggplant_Caterpillar": {
+        "suggestion": "Caterpillar infestation detected. Inspect plants regularly and remove caterpillars manually. Consider using organic pesticides.",
+        "treatment": "Apply Bacillus thuringiensis (Bt) spray. Use neem oil solution. Handpick and destroy visible caterpillars.",
+        "prevention": "Use pheromone traps. Encourage natural predators like birds and beneficial insects. Cover plants with fine mesh netting."
+    },
+    "Eggplant_Hadda_Beetles": {
+        "suggestion": "Hadda beetle infestation detected. These pests can cause significant damage. Remove beetles manually and use neem-based pesticides.",
+        "treatment": "Spray neem oil solution weekly. Handpick adults and larvae. Apply insecticidal soap on affected areas.",
+        "prevention": "Maintain garden hygiene. Remove plant debris. Use yellow sticky traps. Encourage natural predators."
+    },
+    "Eggplant_MagnesiumDeficiency": {
+        "suggestion": "Magnesium deficiency detected. Yellowing between leaf veins is a key symptom. Apply magnesium sulfate (Epsom salt).",
+        "treatment": "Apply 1 tablespoon Epsom salt per gallon of water. Spray on leaves or apply to soil. Repeat every 2 weeks.",
+        "prevention": "Maintain soil pH between 6.0-6.8. Use balanced fertilizers. Add compost regularly. Test soil annually."
+    },
+    "Eggplant_TMV": {
+        "suggestion": "Tobacco Mosaic Virus detected. This viral disease has no cure. Remove and destroy infected plants immediately.",
+        "treatment": "No cure available. Remove infected plants completely. Disinfect tools with bleach solution. Do not compost infected material.",
+        "prevention": "Use disease-resistant varieties. Wash hands after handling tobacco. Sterilize tools regularly. Control aphid populations."
+    },
+    "Eggplant_Verticillium_Wilt": {
+        "suggestion": "Verticillium wilt detected. This soil-borne fungal disease causes wilting and yellowing. Remove infected plants.",
+        "treatment": "No cure for infected plants. Remove and destroy affected plants. Solarize soil before replanting. Improve soil drainage.",
+        "prevention": "Use resistant varieties. Practice 4-year crop rotation. Avoid planting in previously infected soil. Maintain proper drainage."
+    },
+    "Eggplant_healthy": {
+        "suggestion": "Plant is healthy! Continue current care routine with regular watering, fertilization, and pest monitoring.",
+        "treatment": "No treatment needed. Maintain regular care schedule.",
+        "prevention": "Monitor regularly for early disease detection. Maintain proper watering and nutrition. Practice good garden hygiene."
+    },
+    "Guava_Caterpillars": {
+        "suggestion": "Caterpillar damage detected on guava. Remove caterpillars manually and apply organic pesticides.",
+        "treatment": "Apply Bacillus thuringiensis (Bt). Use neem oil spray. Handpick visible caterpillars in early morning.",
+        "prevention": "Use pheromone traps. Bag individual fruits. Maintain clean orchard. Encourage natural predators."
+    },
+    "Guava_Cutting_Weevil": {
+        "suggestion": "Guava weevil infestation detected. Prune and destroy affected shoots. Apply systemic insecticides.",
+        "treatment": "Prune affected shoots 15cm below damage. Apply systemic insecticide. Seal pruning wounds with bordeaux paste.",
+        "prevention": "Regular monitoring and pruning. Destroy pruned material. Apply trunk barriers. Maintain orchard sanitation."
+    },
+    "Guava_Die_Back": {
+        "suggestion": "Die-back disease detected. Prune affected branches well below visible symptoms. Apply copper fungicide.",
+        "treatment": "Prune 30cm below infected area. Disinfect tools between cuts. Apply copper oxychloride. Paint wounds with bordeaux paste.",
+        "prevention": "Avoid mechanical injuries. Improve air circulation through pruning. Apply preventive fungicide sprays. Maintain tree vigor."
+    },
+    "Guava_Healthy": {
+        "suggestion": "Guava plant is healthy! Maintain proper watering schedule and balanced nutrition for optimal fruit production.",
+        "treatment": "No treatment needed. Continue regular care.",
+        "prevention": "Regular pruning for air circulation. Monitor for pests and diseases. Apply balanced fertilizer quarterly."
+    },
+    "Guava_Mealybug_Pests": {
+        "suggestion": "Mealybug infestation detected. These pests secrete honeydew attracting ants. Use neem oil or insecticidal soap.",
+        "treatment": "Spray neem oil solution weekly. Use cotton swab dipped in alcohol for small infestations. Apply insecticidal soap.",
+        "prevention": "Encourage natural predators like ladybugs. Maintain plant health. Remove heavily infested parts. Control ant populations."
+    },
+    "Guava_red_rust": {
+        "suggestion": "Red rust disease detected. This fungal disease causes reddish-brown spots. Apply appropriate fungicide.",
+        "treatment": "Apply copper-based fungicide every 10-14 days. Remove severely infected leaves. Improve air circulation.",
+        "prevention": "Avoid overhead irrigation. Prune for better air flow. Remove fallen leaves. Apply preventive fungicide in wet season."
+    },
+    "Guava_yellow_spot": {
+        "suggestion": "Yellow spot disease detected. Remove affected leaves and improve air circulation. Apply fungicide.",
+        "treatment": "Remove infected leaves. Apply mancozeb or copper fungicide. Spray at 15-day intervals.",
+        "prevention": "Maintain proper spacing. Prune regularly. Avoid water stress. Apply balanced fertilizer."
+    },
+    "Luffa _disease": {
+        "suggestion": "Disease detected in luffa plant. Improve drainage and air circulation. Remove infected parts and apply fungicide.",
+        "treatment": "Remove infected plant parts. Apply appropriate fungicide based on symptoms. Improve soil drainage.",
+        "prevention": "Use disease-free seeds. Practice crop rotation. Maintain proper spacing. Water at base of plants."
+    },
+    "Luffa_healthy": {
+        "suggestion": "Luffa plant is healthy! Ensure adequate support for vines and maintain consistent watering.",
+        "treatment": "No treatment needed. Provide sturdy trellis support.",
+        "prevention": "Maintain consistent moisture. Apply balanced fertilizer. Monitor for pests. Ensure good air circulation."
+    },
+    "Rose_Black_Spot": {
+        "suggestion": "Black spot fungal disease detected. Remove infected leaves. Apply fungicide and improve air circulation.",
+        "treatment": "Remove all infected leaves and destroy. Apply systemic fungicide every 7-10 days. Clean up fallen debris.",
+        "prevention": "Water at base only. Space plants properly. Apply preventive fungicide. Choose resistant varieties."
+    },
+    "Rose_Healthy_Leaf": {
+        "suggestion": "Rose plant is healthy! Continue proper care with regular deadheading and appropriate fertilization.",
+        "treatment": "No treatment needed. Continue regular maintenance.",
+        "prevention": "Regular deadheading. Balanced fertilization. Proper watering. Annual pruning in late winter."
+    },
+    "Rose_Insect_Hole": {
+        "suggestion": "Insect damage detected on rose leaves. Identify the pest and apply appropriate treatment.",
+        "treatment": "Apply insecticidal soap or neem oil. For severe infestations, use appropriate insecticide. Handpick visible pests.",
+        "prevention": "Regular inspection. Encourage beneficial insects. Maintain plant health. Remove debris around plants."
+    },
+    "Rose_Yellow_Mosaic_Virus": {
+        "suggestion": "Rose mosaic virus detected. No cure available. Remove severely affected plants to prevent spread.",
+        "treatment": "No cure available. Remove severely stunted plants. Control aphid vectors. Disinfect pruning tools.",
+        "prevention": "Buy certified virus-free plants. Control aphid populations. Sterilize tools. Remove infected plants promptly."
+    },
+    "Sweet_Orange_foliage_damaged": {
+        "suggestion": "Foliage damage detected. Could be due to pests, disease, or environmental stress. Inspect closely and treat accordingly.",
+        "treatment": "Identify specific cause. Apply appropriate treatment. Improve cultural practices. Ensure adequate nutrition.",
+        "prevention": "Regular monitoring. Balanced fertilization. Proper irrigation. Maintain tree health through good cultural practices."
+    },
+    "Sweet_orange_Healthy": {
+        "suggestion": "Orange tree is healthy! Maintain proper irrigation and fertilization schedule for good fruit production.",
+        "treatment": "No treatment needed. Continue standard care.",
+        "prevention": "Regular fertilization. Adequate watering. Annual pruning. Monitor for pests and diseases."
+    },
+    "Sweet_orange_mealybugs": {
+        "suggestion": "Mealybug infestation on orange tree. Use horticultural oil or insecticidal soap. Encourage natural predators.",
+        "treatment": "Apply horticultural oil spray. Use systemic insecticide for severe infestations. Release predatory insects.",
+        "prevention": "Avoid over-fertilizing with nitrogen. Encourage beneficial insects. Regular monitoring. Maintain tree vigor."
+    },
+    "Tea_Healthy": {
+        "suggestion": "Tea plant is in good condition. Continue standard maintenance practices for quality leaf production.",
+        "treatment": "No treatment needed. Maintain current care routine.",
+        "prevention": "Maintain soil pH 4.5-5.5. Regular pruning. Adequate shade. Balanced fertilization."
+    },
+    "Tea_algal_leaf": {
+        "suggestion": "Algal leaf spot detected. Improve air circulation and reduce humidity. Apply copper-based fungicide.",
+        "treatment": "Prune to improve air circulation. Apply copper oxychloride. Remove severely affected leaves.",
+        "prevention": "Maintain proper spacing. Prune regularly. Ensure good drainage. Avoid excessive shade."
+    },
+    "Tea_gray_blight": {
+        "suggestion": "Gray blight disease detected. Remove infected shoots and apply appropriate fungicide.",
+        "treatment": "Prune infected shoots. Apply copper fungicide or bordeaux mixture. Repeat at 15-day intervals.",
+        "prevention": "Maintain field hygiene. Proper drainage. Avoid water stress. Apply preventive sprays during monsoon."
+    },
+    "Tea_helopeltis": {
+        "suggestion": "Helopeltis (tea mosquito bug) damage detected. Apply systemic insecticides. Monitor regularly.",
+        "treatment": "Apply neem-based insecticide or synthetic pyrethroid. Spray early morning or evening. Repeat every 10-15 days.",
+        "prevention": "Remove weeds and alternate hosts. Regular monitoring. Apply preventive sprays. Maintain shade regulation."
+    },
+    "Tea_looper_infested": {
+        "suggestion": "Tea looper infestation detected. Apply biological or chemical insecticides. Monitor caterpillar population.",
+        "treatment": "Apply Bacillus thuringiensis (Bt). For severe infestation, use appropriate insecticide. Handpick if feasible.",
+        "prevention": "Regular monitoring. Encourage natural predators. Maintain biodiversity. Proper shade management."
+    },
+    "Tea_red_spider": {
+        "suggestion": "Red spider mite infestation detected. These pests thrive in hot, dry conditions. Apply miticide.",
+        "treatment": "Apply appropriate miticide. Use sulfur-based products. Increase humidity around plants. Spray undersides of leaves.",
+        "prevention": "Maintain adequate moisture. Avoid water stress. Encourage predatory mites. Regular monitoring during dry periods."
+    }
+}
