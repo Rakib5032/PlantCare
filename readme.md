@@ -142,9 +142,11 @@ For questions, suggestions, or support:
 🌿 Happy Farming! 🌿
 
 🌿 Happy Farming! 🌿
+## 📸 App Screenshots
 
-![Home Page](./image.png)
-![Upload Image](./image-1.png)
-![Prediction Result](./image-2.png)
-![Grad-CAM Visualization](./image-3.png)
+![Home Page](images/image.png)
+![Upload Image](images/image-1.png)
+![Prediction Result](images/image-2.png)
+![Grad-CAM Visualization](images/image-3.png)
+
 
