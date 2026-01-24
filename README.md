@@ -36,36 +36,40 @@ Our AI can detect diseases in these 6 plant types:
 
 ## 📁 Project Structure
 
-
-```
-project_root/
-├─ app.py                     # Main Streamlit application
-├─ requirements.txt           # Python dependencies
-├─ README.md                  # Project documentation
-├─ .gitignore                 # Git ignore file
-│
-├─ model/                     # Saved model files
-│   └─ final_model.h5        # Trained EfficientNetV2B3 model
-│
-├─ static/                    # Static assets
-│   ├─ css/                  # CSS files (embedded in app)
-│   └─ js/                   # JavaScript files
-│
-├─ uploads/                   # Temporarily store uploaded images
-│   └─ .gitkeep
-│
-├─ xai_outputs/               # Grad-CAM / SHAP / LIME results
-│   └─ .gitkeep
-│
-├─ suggestions/               # Disease information database
-│   └─ disease_suggestions.json
-│
-└─ utils/                     # Helper modules
-    ├─ __init__.py
-    ├─ preprocessing.py      # Image preprocessing functions
-    ├─ gradcam.py           # Grad-CAM implementation
-    └─ xai.py               # XAI utilities (SHAP, LIME)
-
+project_root/  
+├─ main.py                   # Main FastAPI application  
+├─ requirements.txt          # Python dependencies  
+├─ README.md                 # Project documentation  
+├─ .gitignore                # Git ignore file  
+│  
+├─ model/                    # Saved model files  
+│   ├─ best_v2b3_frozen.keras  
+│   └─ class_names.txt  
+│  
+├─ static/                   # Static assets  
+│   ├─ css/  
+│   │   └─ style.css  
+│   ├─ js/  
+│   │   └─ app.js  
+│   └─ images/  
+│       ├─ gif.gif  
+│       └─ gif1.gif  
+│  
+├─ templates/  
+│   └─ index.html  
+│  
+├─ images/                   # README screenshots  
+│   ├─ image.png  
+│   ├─ image-1.png  
+│   ├─ image-2.png  
+│   └─ image-3.png  
+│  
+├─ data/  
+│   └─ advice.json  
+│  
+└─ xai/  
+    ├─ gradcam.py  
+    └─ lime_explainer.py  
 
 ---
 
@@ -167,10 +171,10 @@ For questions, suggestions, or support:
 
 ## 📸 App Screenshots
 
-![Home Page](images/image.png)  
-![Upload Image](images/image-1.png)  
-![Prediction Result](images/image-2.png)  
-![Grad-CAM Visualization](images/image-3.png)  
+![Home Page](https://github.com/Rakib5032/PlantCare/raw/main/images/image.png)  
+![Upload Image](https://github.com/Rakib5032/PlantCare/raw/main/images/image-1.png)  
+![Prediction Result](https://github.com/Rakib5032/PlantCare/raw/main/images/image-2.png)  
+![Grad-CAM Visualization](https://github.com/Rakib5032/PlantCare/raw/main/images/image-3.png)  
 
 ---
 
