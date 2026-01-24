@@ -5,5 +5,4 @@ numpy
 opencv-python
 pillow
 python-multipart
-jinja2
 matplotlib

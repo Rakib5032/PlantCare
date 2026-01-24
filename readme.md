@@ -59,32 +59,6 @@ project_root/
     ├─ preprocessing.py      # Image preprocessing functions
     ├─ gradcam.py           # Grad-CAM implementation
     └─ xai.py               # XAI utilities (SHAP, LIME)
-```
-
-## 🎯 Usage
-
-### Basic Usage
-
-1. **Launch the App**
-   ```bash
-   streamlit run app.py
-   ```
-
-2. **Upload or Capture Image**
-   - Click the upload area to select an image from your device
-   - Or use the camera button to take a photo directly
-
-3. **Analyze Plant**
-   - Click "🔍 Analyze Plant" button
-   - Wait for the AI to process your image
-
-4. **View Results**
-   - See the disease diagnosis and confidence score
-   - Read treatment recommendations and prevention tips
-
-5. **Generate XAI Visualization** (Optional)
-   - Click "Generate Grad-CAM" to see where the AI focused
-   - Red/yellow areas show the most important regions for diagnosis
 
 ### Image Requirements
 
@@ -101,21 +75,6 @@ project_root/
 - **Last Conv Layer**: `top_conv` (used for Grad-CAM)
 - **Training Dataset**: Custom dataset with 6 plant types
 
-### Class Names
-
-```python
-class_names = [
-    'Eggplant_Blight', 'Eggplant_Caterpillar', 'Eggplant_Hadda_Beetles',
-    'Eggplant_MagnesiumDeficiency', 'Eggplant_TMV', 'Eggplant_Verticillium_Wilt',
-    'Eggplant_healthy', 'Guava_Caterpillars', 'Guava_Cutting_Weevil',
-    'Guava_Die_Back', 'Guava_Healthy', 'Guava_Mealybug_Pests', 'Guava_red_rust',
-    'Guava_yellow_spot', 'Luffa _disease', 'Luffa_healthy', 'Rose_Black_Spot',
-    'Rose_Healthy_Leaf', 'Rose_Insect_Hole', 'Rose_Yellow_Mosaic_Virus',
-    'Sweet_Orange_foliage_damaged', 'Sweet_orange_Healthy', 'Sweet_orange_mealybugs',
-    'Tea_Healthy', 'Tea_algal_leaf', 'Tea_gray_blight', 'Tea_helopeltis',
-    'Tea_looper_infested', 'Tea_red_spider'
-]
-```
 
 ## 🛠️ Technical Details
 
@@ -141,17 +100,6 @@ class_names = [
 
 - **Accuracy**: 97%+ on test dataset
 - **Inference Time**: < 2 seconds per image
-
-
-1. Create `render.yaml`:
-```yaml
-services:
-  - type: web
-    name: plantcare-ai
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python -m uvicorn main: app --reload
-``
 
 ## 📝 Future Enhancements
 
@@ -193,7 +141,7 @@ For questions, suggestions, or support:
 
 🌿 Happy Farming! 🌿
 
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
+![Home Page](image/image.png)
+![Upload Image](image/image-1.png)
+![Prediction Result](image/image-2.png)
+![Grad-CAM Visualization](image/image-3.png)
