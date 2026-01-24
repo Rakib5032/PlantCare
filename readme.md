@@ -141,7 +141,7 @@ For questions, suggestions, or support:
 
 🌿 Happy Farming! 🌿
 
-![Home Page](image/image.png)
-![Upload Image](image/image-1.png)
-![Prediction Result](image/image-2.png)
-![Grad-CAM Visualization](image/image-3.png)
+![Home Page](images/image.png)
+![Upload Image](images/image-1.png)
+![Prediction Result](images/image-2.png)
+![Grad-CAM Visualization](images/image-3.png)
